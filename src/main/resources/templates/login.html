@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Log in with your account</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" type="text/css"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+<!-- Custom CSS -->
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	th:href="@{/css/theme.css}" rel="stylesheet" type="text/css" />
+<link href="../../static/css/ace.min.css" th:href="@{/css/ace.min.css}"
+	rel="stylesheet" type="text/css" />
+<link href="../../static/css/ace-rtl.min.css"
+	th:href="@{/css/ace-rtl.min.css}" rel="stylesheet" type="text/css" />
+<link href="../../static/css/mycss.css" th:href="@{/css/mycss.css}"
+	rel="stylesheet" type="text/css" />
+<!-- Custom Fonts -->
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic,700italic"
+	rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
+	rel="stylesheet" type="text/css" />
+
+<link
+	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+	rel="stylesheet" media="screen" />
+
+<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+	th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+<script src="../../static/js/myjs.js" th:src="@{/js/myjs.js}"></script>
+
+<link href="../../static/css/spring-core.css"
+	th:href="@{/css/spring-core.css}" rel="stylesheet" media="screen" />
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+	<!-- Navigation -->
+	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-main-collapse">
+					<i class="fa fa-bars"></i>
+				</button>
+				<a class="navbar-brand page-scroll" href="#"> Central Perk</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div
+				class="collapse navbar-collapse navbar-right navbar-main-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/">Home</a></li>
+					<li><a href="/">Login</a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
+	<section>
+		<div>
+			<br></br>
+		</div>
+		<div class="block-body">
+
+			<form th:action="@{/login}" th:object="${userLogin}"
+				class="form-signin" method="post">
+				<h2 class="form-heading" align="center">Log in</h2>
+				<div>
+					<br></br>
+				</div>
+				<span th:text="${message}"></span>
+				<div class="form-group">
+					<input type="text" id="username" name="username"
+						class="form-control" placeholder="Username" />
+
+				</div>
+
+				<div>
+					<input type="password" id="password" name="password"
+						class="form-control" placeholder="Password" />
+				</div>
+				<span th:text="${sucess}"></span>
+				<div>
+					<br></br>
+				</div>
+				<span th:text="${error}"></span>
+				<div>
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Log
+						In</button>
+				</div>
+				<div>
+					<h4 class="text-center">
+						<a href="/registration">Create an account</a>
+					</h4>
+				</div>
+
+			</form>
+
+		</div>
+		<!-- /container -->
+	</section>
+	<!-- Footer -->
+	<footer>
+		<div class="container text-center">
+			<p class="credits">Copyright &copy; 2017 Central Perk. Built on
+				Spring Framework.</p>
+		</div>
+	</footer>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>

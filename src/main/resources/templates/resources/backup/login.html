@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type"
+	content="text/html; charset=UTF-8; IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>Log in with your account</title>
+
+<link th:href="@{/css/common.css}" rel="stylesheet" />
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" type="text/css"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<!-- Custom CSS -->
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	th:href="@{/css/theme.css}" rel="stylesheet" type="text/css" />
+<!-- Custom Fonts -->
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic,700italic"
+	rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
+	rel="stylesheet" type="text/css" />
+
+<link
+	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+	rel="stylesheet" media="screen" />
+
+<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+	th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+<link href="../../static/css/spring-core.css"
+	th:href="@{/css/spring-core.css}" rel="stylesheet" media="screen" />
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+	<!-- Navigation -->
+	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-main-collapse">
+					<i class="fa fa-bars"></i>
+				</button>
+				<a class="navbar-brand page-scroll" href="login.html"> Central
+					Perk</a>
+			</div>
+		</div>
+		<!-- /.container -->
+	</nav>
+
+	<section>
+		<div></div>
+		<div class="container">
+
+			<form th:action="@{/login}" method="POST" class="form-signin">
+				<h2 class="form-heading" align="center">Log in</h2>
+
+				<div class="form-group ${error != null ? 'has-error' : ''}">
+					<span th:field="*{description}"></span> <input name="username"
+						type="text" class="form-control"
+						placeholder="Username" autofocus="autofocus" /> <input name="password"
+						type="password" class="form-control"
+						placeholder="Password" /> <span th:field="${error}"></span> <input
+						type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Log
+						In</button>
+					<h4 class="text-center">
+						<a href="/registration">Create an account</a>
+					</h4>
+				</div>
+
+			</form>
+
+		</div>
+		<!-- /container -->
+	</section>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script th:href="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>
